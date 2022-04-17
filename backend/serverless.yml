@@ -1,5 +1,5 @@
 # TODO: Change the name of the org 
-org: sudkul
+org: luuthanhtu2296
 app: serverless-todo-app
 service: serverless-todo-app
 
@@ -13,8 +13,10 @@ provider:
   runtime: nodejs12.x
   lambdaHashingVersion: '20201221'
 
-  stage: ${opt:stage, 'dev'}
-  region: ${opt:region, 'us-east-1'}
+  # stage: ${opt:stage, 'dev'}
+  # region: ${opt:region, 'us-east-1'}
+  stage: dev
+  region: us-east-1
 
   tracing:
     lambda: true
@@ -25,7 +27,7 @@ provider:
   environment:
     TODOS_TABLE: Todos-${self:provider.stage}
     TODOS_CREATED_AT_INDEX: CreatedAtIndex
-    ATTACHMENT_S3_BUCKET: serverless-c4-todo-images-${self:provider.stage}
+    ATTACHMENT_S3_BUCKET: serverless-c4-todo-images-esrfdcvf-${self:provider.stage}
     SIGNED_URL_EXPIRATION: 300
     AUTH_0_JWKS_URL: https://dev-gw31l32n.us.auth0.com/.well-known/jwks.json
   logs:
