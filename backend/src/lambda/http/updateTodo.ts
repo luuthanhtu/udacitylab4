@@ -4,27 +4,37 @@ import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda'
 import * as middy from 'middy'
 import { cors, httpErrorHandler } from 'middy/middlewares'
 
-import { updateTodo } from '../../businessLogic/todos'
+import { updateAttachmentUrl } from '../../businessLogic/todos'
 import { UpdateTodoRequest } from '../../requests/UpdateTodoRequest'
-import { getUserId } from '../utils'
-import { createLogger } from '../../utils/logger'
+// import { getUserId } from '../utils'
+import { TodosStorage } from '../../businessLogic/attachmentUtils'
+import * as uuid from 'uuid'
+import { updateTodo } from '../../businessLogic/todos'
 
-const logger = createLogger('UpdateTodos')
+
+const todosStorage = new TodosStorage()
+
 export const handler = middy(
   async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
-    logger.info('UpdateTodos event', { event })
     const todoId = event.pathParameters.todoId
-    const updatedTodo: UpdateTodoRequest = JSON.parse(event.body)
     // TODO: Update a TODO item with the provided id using values in the "updatedTodo" object
-    const userId = getUserId(event)
+    const attachmentId = uuid.v4();
+    const attachmentUrl = await todosStorage.getAttachmentUrl(attachmentId)
+    const updatedTodo: UpdateTodoRequest = JSON.parse(event.body)
+    const UpdateItem = await updateTodo(todoId, updatedTodo)
 
-    await updateTodo(userId, todoId, updatedTodo)
+    await updateAttachmentUrl(todoId,attachmentUrl)
     return {
-      statusCode: 200,
-      body: JSON.stringify({})
-  }
-    
-  }
+        statusCode: 200,
+        headers: {
+          'Access-Control-Allow-Origin': '*'
+        },
+        body: JSON.stringify({
+          UpdateItem: UpdateItem
+        })
+      }
+
+}
 )
 
 handler
