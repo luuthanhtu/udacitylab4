@@ -1,22 +1,9 @@
-// import * as AWS from 'aws-sdk'
-// import * as AWSXRay from 'aws-xray-sdk'
-// import { DocumentClient } from 'aws-sdk/clients/dynamodb'
-// import { createLogger } from '../utils/logger'
-// import { TodoItem } from '../models/TodoItem'
-// import { TodoUpdate } from '../models/TodoUpdate';
-
-// const XAWS = AWSXRay.captureAWS(AWS)
-
-// const logger = createLogger('TodosAccess')
-
-// // TODO: Implement the dataLayer logic
-
-
 import 'source-map-support/register'
 
 import * as AWS from 'aws-sdk'
 import { DocumentClient } from 'aws-sdk/clients/dynamodb'
 const AWSXRay = require('aws-xray-sdk');
+
 import { TodoItem } from '../models/TodoItem'
 import { TodoUpdate } from '../models/TodoUpdate'
 import { createLogger } from '../utils/logger'
@@ -30,8 +17,42 @@ export class TodosAccess {
   constructor(
     private readonly docClient: DocumentClient = new XAWS.DynamoDB.DocumentClient(),
     private readonly todosTable = process.env.TODOS_TABLE,
-    private readonly todosByUserIndex = process.env.TODOS_BY_USER_INDEX
+    private readonly todosByUserIndex = process.env.TODOS_CREATED_AT_INDEX
   ) {}
+
+  async getTodoItems(userId: string): Promise<TodoItem[]> {
+    logger.info(`Getting all todos for user ${userId}`)
+
+    const result = await this.docClient.query({
+      TableName: this.todosTable,
+      IndexName: this.todosByUserIndex,
+      KeyConditionExpression: 'userId = :userId',
+      ExpressionAttributeValues: {
+        ':userId': userId
+      }
+    }).promise()
+
+    const items = result.Items
+
+    logger.info(`Found ${items.length} todos for user ${userId}`)
+
+    return items as TodoItem[]
+  }
+
+  async getTodoItem(todoId: string): Promise<TodoItem> {
+    logger.info(`Get todo ${todoId}`)
+
+    const result = await this.docClient.get({
+      TableName: this.todosTable,
+      Key: {
+        todoId
+      }
+    }).promise()
+
+    const item = result.Item
+
+    return item as TodoItem
+  }
 
   async createTodoItem(todoItem: TodoItem) {
     logger.info(`Putting todo ${todoItem.todoId} into ${this.todosTable}`)
@@ -42,23 +63,8 @@ export class TodosAccess {
     }).promise()
   }
 
-  async updateAttachmentUrl(todoId: string, attachmentUrl: string) {
-    logger.info(`Updating attachment URL for todo ${todoId} in ${this.todosTable}`)
-
-    await this.docClient.update({
-      TableName: this.todosTable,
-      Key: {
-        todoId
-      },
-      UpdateExpression: 'set attachmentUrl = :attachmentUrl',
-      ExpressionAttributeValues: {
-        ':attachmentUrl': attachmentUrl
-      }
-    }).promise()
-  }
-
   async updateTodoItem(todoId: string, todoUpdate: TodoUpdate) {
-    logger.info(`Updating todo item ${todoId} in ${this.todosTable}`)
+    logger.info(`Updating todo item ${todoId}`)
 
     await this.docClient.update({
       TableName: this.todosTable,
@@ -88,21 +94,19 @@ export class TodosAccess {
     }).promise()    
   }
 
-  async GetAllToDo(userId: string): Promise<TodoItem[]> {
+  async updateAttachmentUrl(todoId: string, attachmentUrl: string) {
+    logger.info(`Updating attachment URL for todo ${todoId}`)
 
-    const result = await this.docClient.query({
+    await this.docClient.update({
       TableName: this.todosTable,
-      IndexName: this.todosByUserIndex,
-      KeyConditionExpression: 'userId = :userId',
+      Key: {
+        todoId
+      },
+      UpdateExpression: 'set attachmentUrl = :attachmentUrl',
       ExpressionAttributeValues: {
-        ':userId': userId
+        ':attachmentUrl': attachmentUrl
       }
     }).promise()
-
-    const items = result.Items
-
-    logger.info(`Found ${items.length} todos for user ${userId} in ${this.todosTable}`)
-
-    return items as TodoItem[]
   }
+
 }

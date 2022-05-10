@@ -1,102 +1,93 @@
-import { TodosAccess } from './todosAcess'
-// import { AttachmentUtils } from './attachmentUtils';
+import 'source-map-support/register'
+
+import * as uuid from 'uuid'
+
+import { TodosAccess } from './TodosAccess'
+import { connectToS3 } from './attachmentUtils'
 import { TodoItem } from '../models/TodoItem'
+import { TodoUpdate } from '../models/TodoUpdate'
 import { CreateTodoRequest } from '../requests/CreateTodoRequest'
 import { UpdateTodoRequest } from '../requests/UpdateTodoRequest'
-// import { createLogger } from '../utils/logger'
-import * as uuid from 'uuid'
-// import * as createError from 'http-errors'
-import {TodosStorage} from './attachmentUtils'
-import { TodoUpdate } from '../models/TodoUpdate'
+import { createLogger } from '../utils/logger'
 
-// // TODO: Implement businessLogic
-// const todosAccess = new TodosAccess()
+const logger = createLogger('todos')
 
-// export async function createTodo(userId: string, createTodoRequest: CreateTodoRequest): Promise<TodoItem> {
-//     const todoId = uuid.v4()
-  
-//     const newItem: TodoItem = {
-//       // userId,
-//       todoId,
-//       createdAt: new Date().toISOString(),
-//       done: false,
-//       attachmentUrl: null,
-//       ...createTodoRequest
-//     }
-    
-//     await todosAccess.createTodoItem(newItem)
-  
-//     return newItem
-//   }
-
-
-  
-// // TODO: Implement businessLogic
 const todosAccess = new TodosAccess()
-const todosStorage = new TodosStorage()
+const Storage = new connectToS3()
+
+export async function getTodos(userId: string): Promise<TodoItem[]> {
+  logger.info(`Retrieve all todos`)
+
+  return await todosAccess.getTodoItems(userId)
+}
 
 export async function createTodo(userId: string, createTodoRequest: CreateTodoRequest): Promise<TodoItem> {
-    const todoId = uuid.v4()
-  
-    const newItem: TodoItem = {
-      userId,
-      todoId,
-      createdAt: new Date().toISOString(),
-      done: false,
-      attachmentUrl: null,
-      ...createTodoRequest
-    }
-    
-    await todosAccess.createTodoItem(newItem)
-  
-    return newItem
+  const todoId = uuid.v4()
+
+  const newItem: TodoItem = {
+    userId,
+    todoId,
+    createdAt: new Date().toISOString(),
+    done: false,
+    attachmentUrl: null,
+    ...createTodoRequest
   }
 
+  logger.info(`Create todo ${todoId}`)
 
-  export async function createAttachmentPresignedUrl(attachmentId: string): Promise<string> {
-  
-    const uploadUrl = await todosStorage.getUploadUrl(attachmentId)
-  
-    return uploadUrl
-  }
-  
-  export async function updateAttachmentUrl(todoId: string, attachmentId: string) {
-  
-    const attachmentUrl = await todosStorage.getAttachmentUrl(attachmentId)
-  
-  
-  
-    await todosAccess.updateAttachmentUrl(todoId, attachmentUrl)
-    
-  }
+  await todosAccess.createTodoItem(newItem)
+
+  return newItem
+}
+
+export async function updateTodo(userId: string, todoId: string, updateTodoRequest: UpdateTodoRequest) {
+  logger.info(`Update todo ${todoId}`)
+
+  const item = await todosAccess.getTodoItem(todoId)
 
 
-  export async function updateTodo(todoId: string, updateTodoRequest: UpdateTodoRequest) {
-    // logger.info(`Updating todo ${todoId} for user ${userId}`, { userId, todoId, todoUpdate: updateTodoRequest })
-  
-    // const item = await todosAccess.getTodoItem(todoId)
-  
-    // if (!item)
-    //   throw new Error('Item not found')  // FIXME: 404?
-  
-    // if (item.userId !== userId) {
-    //   logger.error(`User ${userId} does not have permission to update todo ${todoId}`)
-    //   throw new Error('User is not authorized to update item')  // FIXME: 403?
-    // }
-  
-    todosAccess.updateTodoItem(todoId, updateTodoRequest as TodoUpdate)
+  if (item.userId !== userId) {
+    logger.error(`User ${userId} does not have permission to update todo ${todoId}`)
+    throw new Error('Not authorized to update item')  
   }
 
+  todosAccess.updateTodoItem(todoId, updateTodoRequest as TodoUpdate)
+}
 
-  export async function deleteTodo(todoId: string) {
-  
+export async function deleteTodo(userId: string, todoId: string) {
+  logger.info(`Deleting todo ${todoId} for user ${userId}`, { userId, todoId })
 
-  
-    todosAccess.deleteTodoItem(todoId)
+  const item = await todosAccess.getTodoItem(todoId)
+
+  if (item.userId !== userId) {
+    logger.error(`User ${userId} does not have permission to delete todo ${todoId}`)
+    throw new Error('Not authorized to delete item')  
   }
 
-  export async function GetAll(userId: string): Promise<TodoItem[]> {
-  
-    return await todosAccess.GetAllToDo(userId)
+  todosAccess.deleteTodoItem(todoId)
+}
+
+export async function updateAttachmentUrl(userId: string, todoId: string, attachmentId: string) {
+  logger.info(`Create attachment URL for attachment ${attachmentId}`)
+
+  const attachmentUrl = await Storage.getAttachmentUrl(attachmentId)
+
+  logger.info(`Update todo ${todoId} with attachment URL ${attachmentUrl}`)
+
+  const item = await todosAccess.getTodoItem(todoId)
+
+  if (item.userId !== userId) {
+    logger.error(`User ${userId} does not have permission to update todo ${todoId}`)
+    throw new Error('Not authorized to update item')
   }
-  
+
+  await todosAccess.updateAttachmentUrl(todoId, attachmentUrl)
+}
+
+export async function createAttachmentPresignedUrl(attachmentId: string): Promise<string> {
+  logger.info(`Generating upload URL for attachment ${attachmentId}`)
+
+  const uploadUrl = await Storage.getUploadUrl(attachmentId)
+
+  return uploadUrl
+}

@@ -5,12 +5,12 @@ import * as AWSXRay from 'aws-xray-sdk'
 
 const XAWS = AWSXRay.captureAWS(AWS)
 
-export class TodosStorage {
+export class connectToS3 {
 
   constructor(
     private readonly s3 = new XAWS.S3({ signatureVersion: 'v4' }),
     // private readonly bucketName = process.env.ATTACHMENTS_S3_BUCKET,
-    private readonly bucketName = 'serverless-c4-todo-cvbfr-images-dev',
+    private readonly bucketName = process.env.ATTACHMENTS_S3_BUCKET,
     private readonly urlExpiration = parseInt(process.env.SIGNED_URL_EXPIRATION)
   ) {}
 
