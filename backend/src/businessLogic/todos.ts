@@ -3,7 +3,7 @@ import 'source-map-support/register'
 import * as uuid from 'uuid'
 
 import { TodosAccess } from './TodosAccess'
-import { connectToS3 } from './attachmentUtils'
+import { connectToS3 } from '../dataConnect/attachmentUtils'
 import { TodoItem } from '../models/TodoItem'
 import { TodoUpdate } from '../models/TodoUpdate'
 import { CreateTodoRequest } from '../requests/CreateTodoRequest'

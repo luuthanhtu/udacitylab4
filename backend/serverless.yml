@@ -6,8 +6,12 @@ service: labapptult13
 
 plugins:
   - serverless-webpack
+  - serverless-reqvalidator-plugin
+  - serverless-aws-documentation
+  - serverless-plugin-canary-deployments
   - serverless-iam-roles-per-function
-  - serverless-plugin-tracing
+  - serverless-dynamodb-local
+  - serverless-offline
 
 provider:
   name: aws
