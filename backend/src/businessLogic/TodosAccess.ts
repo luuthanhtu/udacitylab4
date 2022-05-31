@@ -39,12 +39,13 @@ export class TodosAccess {
     return items as TodoItem[]
   }
 
-  async getTodoItem(todoId: string): Promise<TodoItem> {
+  async getTodoItem(userId: string,todoId: string): Promise<TodoItem> {
     logger.info(`Get todo ${todoId}`)
 
     const result = await this.docClient.get({
       TableName: this.todosTable,
       Key: {
+        userId,
         todoId
       }
     }).promise()
@@ -63,13 +64,14 @@ export class TodosAccess {
     }).promise()
   }
 
-  async updateTodoItem(todoId: string, todoUpdate: TodoUpdate) {
+  async updateTodoItem(userId: string,todoId: string, todoUpdate: TodoUpdate) {
     logger.info(`Updating todo item ${todoId}`)
 
     await this.docClient.update({
       TableName: this.todosTable,
       Key: {
-        todoId
+        todoId,
+        userId
       },
       UpdateExpression: 'set #name = :name, dueDate = :dueDate, done = :done',
       ExpressionAttributeNames: {
@@ -83,24 +85,26 @@ export class TodosAccess {
     }).promise()   
   }
 
-  async deleteTodoItem(todoId: string) {
+  async deleteTodoItem(userId: string,todoId: string) {
     logger.info(`Deleting todo item ${todoId} from ${this.todosTable}`)
 
     await this.docClient.delete({
       TableName: this.todosTable,
       Key: {
-        todoId
+        todoId,
+        userId
       }
     }).promise()    
   }
 
-  async updateAttachmentUrl(todoId: string, attachmentUrl: string) {
+  async updateAttachmentUrl(userId: string,todoId: string, attachmentUrl: string) {
     logger.info(`Updating attachment URL for todo ${todoId}`)
 
     await this.docClient.update({
       TableName: this.todosTable,
       Key: {
-        todoId
+        todoId,
+        userId
       },
       UpdateExpression: 'set attachmentUrl = :attachmentUrl',
       ExpressionAttributeValues: {
@@ -110,3 +114,4 @@ export class TodosAccess {
   }
 
 }
+
