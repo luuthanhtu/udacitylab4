@@ -1,8 +1,9 @@
-org: luuthanhtu2296
+# org: luuthanhtu
+org: luuthanhtu
 app: labapptult13
 service: labapptult13
 
-frameworkVersion: '3'
+# frameworkVersion: '3'
 
 plugins:
   - serverless-webpack
@@ -89,6 +90,12 @@ functions:
           path: todos
           cors: true
           authorizer: Auth
+          reqValidatorName: RequestBodyValidator
+          documentation:
+            summary: Create a new todo
+            description: Create a new todo
+            requestModels:
+              'application/json': CreateTodoRequest  
     iamRoleStatements:
       - Effect: Allow
         Action:
@@ -117,6 +124,12 @@ functions:
           path: todos/{todoId}
           cors: true
           authorizer: Auth
+          reqValidatorName: RequestBodyValidator
+          documentation:
+            summary: Update a todo item
+            description: Update a todo item
+            requestModels:
+              'application/json': UpdateTodoRequest
     iamRoleStatements:
       - Effect: Allow
         Action:
@@ -139,7 +152,7 @@ functions:
           - "*"
 
   DeleteTodo:
-    handler: src/lambda/http/deleteTodo.handler
+    handler: src/lambda/http/deleteTodo.handlera
     events:
       - http:
           method: delete
@@ -212,6 +225,15 @@ resources:
         ResponseType: DEFAULT_4XX
         RestApiId:
           Ref: ApiGatewayRestApi
+
+    RequestBodyValidator:
+      Type: AWS::ApiGateway::RequestValidator
+      Properties:
+        Name: 'request-body-validator'
+        RestApiId:
+          Ref: ApiGatewayRestApi
+        ValidateRequestBody: true
+        ValidateRequestParameters: false
 
     TodosTable:
       Type: AWS::DynamoDB::Table
