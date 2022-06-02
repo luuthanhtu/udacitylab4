@@ -5,11 +5,21 @@
   "properties": {
     "name": {
       "type": "string",
+<<<<<<< HEAD
+      "minLength": 2,
+      "maxLength": 254
+    },
+    "dueDate": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 254
+=======
       "minLength": 1
     },
     "dueDate": {
       "type": "string",
       "minLength": 1
+>>>>>>> 3d16fdbae0010a1f0e23dc461babf0b1ae90cdb4
     }
   },
   "required": [

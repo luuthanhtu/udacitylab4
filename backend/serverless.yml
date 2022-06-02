@@ -1,5 +1,5 @@
 # org: luuthanhtu
-org: luuthanhtu
+org: luuthanhtu2296
 app: labapptult13
 service: labapptult13
 
@@ -95,7 +95,7 @@ functions:
             summary: Create a new todo
             description: Create a new todo
             requestModels:
-              'application/json': CreateTodoRequest  
+              'application/json': CreateTodoRequest
     iamRoleStatements:
       - Effect: Allow
         Action:

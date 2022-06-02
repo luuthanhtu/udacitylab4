@@ -208,7 +208,7 @@
               "Action": "sts:AssumeRole",
               "Condition": {
                 "StringEquals": {
-                  "sts:ExternalId": "ServerlessEnterprise-a3ff6229-fd94-4faf-97c5-8f4fbaeb0bc0"
+                  "sts:ExternalId": "ServerlessEnterprise-2f2a8adb-e503-4789-9656-b38873133ae1"
                 }
               }
             }
@@ -277,7 +277,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/labapptult13/dev/1654070186170-2022-06-01T07:56:26.170Z/labapptult13.zip"
+          "S3Key": "serverless/labapptult13/dev/1654137889836-2022-06-02T02:44:49.836Z/labapptult13.zip"
         },
         "Handler": "s_Auth.handler",
         "Runtime": "nodejs12.x",
@@ -313,7 +313,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/labapptult13/dev/1654070186170-2022-06-01T07:56:26.170Z/labapptult13.zip"
+          "S3Key": "serverless/labapptult13/dev/1654137889836-2022-06-02T02:44:49.836Z/labapptult13.zip"
         },
         "Handler": "s_GetTodos.handler",
         "Runtime": "nodejs12.x",
@@ -350,7 +350,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/labapptult13/dev/1654070186170-2022-06-01T07:56:26.170Z/labapptult13.zip"
+          "S3Key": "serverless/labapptult13/dev/1654137889836-2022-06-02T02:44:49.836Z/labapptult13.zip"
         },
         "Handler": "s_CreateTodo.handler",
         "Runtime": "nodejs12.x",
@@ -387,7 +387,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/labapptult13/dev/1654070186170-2022-06-01T07:56:26.170Z/labapptult13.zip"
+          "S3Key": "serverless/labapptult13/dev/1654137889836-2022-06-02T02:44:49.836Z/labapptult13.zip"
         },
         "Handler": "s_UpdateTodo.handler",
         "Runtime": "nodejs12.x",
@@ -424,7 +424,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/labapptult13/dev/1654070186170-2022-06-01T07:56:26.170Z/labapptult13.zip"
+          "S3Key": "serverless/labapptult13/dev/1654137889836-2022-06-02T02:44:49.836Z/labapptult13.zip"
         },
         "Handler": "s_DeleteTodo.handler",
         "Runtime": "nodejs12.x",
@@ -461,7 +461,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/labapptult13/dev/1654070186170-2022-06-01T07:56:26.170Z/labapptult13.zip"
+          "S3Key": "serverless/labapptult13/dev/1654137889836-2022-06-02T02:44:49.836Z/labapptult13.zip"
         },
         "Handler": "s_GenerateUploadUrl.handler",
         "Runtime": "nodejs12.x",
@@ -491,64 +491,64 @@
         "GenerateUploadUrlLogGroup"
       ]
     },
-    "AuthLambdaVersion2bmxZJ0SW0IXlLqFrzQmVQsVfJ6BFJG1w5FaONPvU": {
+    "AuthLambdaVersionFY0HtrFc9NYIpmdtKaI6GYNeJzqCtdgBHRDhNXxFEcE": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AuthLambdaFunction"
         },
-        "CodeSha256": "U4+VXhTZCho3OhdLtcUIZXpBPhW/+GahgpUhhnQTAbs="
+        "CodeSha256": "RDdR/sFFbDSaDD6xr813iPmYJtf/Hm2UvBM3Z3++NSw="
       }
     },
-    "GetTodosLambdaVersionz95oYUCR7pgTnhw5i2ZTnHDSpBvvTiAUsdhQEKr2BU": {
+    "GetTodosLambdaVersion5ijygv2RzjjnCk01UaNzYISViKppBY5Vz4WjXc": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetTodosLambdaFunction"
         },
-        "CodeSha256": "U4+VXhTZCho3OhdLtcUIZXpBPhW/+GahgpUhhnQTAbs="
+        "CodeSha256": "RDdR/sFFbDSaDD6xr813iPmYJtf/Hm2UvBM3Z3++NSw="
       }
     },
-    "CreateTodoLambdaVersionMIQaDqIVzcnd1gOxcm1wykBT57IJaVnuh0kBQUjCM": {
+    "CreateTodoLambdaVersionD13oMsitRwZq0dnEaRai4OZsjjTTkOP8TvjMQl5cmo": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateTodoLambdaFunction"
         },
-        "CodeSha256": "U4+VXhTZCho3OhdLtcUIZXpBPhW/+GahgpUhhnQTAbs="
+        "CodeSha256": "RDdR/sFFbDSaDD6xr813iPmYJtf/Hm2UvBM3Z3++NSw="
       }
     },
-    "UpdateTodoLambdaVersiongikxZPEiFJCrXLZD8zlNO5mRXA0MTauysWo6aN1wV4": {
+    "UpdateTodoLambdaVersionVkESmem7sEE2sABoyB3gkgIfD1Bmp5f6DP2lqaFv0": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "UpdateTodoLambdaFunction"
         },
-        "CodeSha256": "U4+VXhTZCho3OhdLtcUIZXpBPhW/+GahgpUhhnQTAbs="
+        "CodeSha256": "RDdR/sFFbDSaDD6xr813iPmYJtf/Hm2UvBM3Z3++NSw="
       }
     },
-    "DeleteTodoLambdaVersionwljoFUyVQTHssDq924s6dIlY6YCahDvzxobgeCe1Wvo": {
+    "DeleteTodoLambdaVersionzDWMRAN2zBt9PB5JPK8BnWjaTwx3StMZHmx8TMI": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "DeleteTodoLambdaFunction"
         },
-        "CodeSha256": "U4+VXhTZCho3OhdLtcUIZXpBPhW/+GahgpUhhnQTAbs="
+        "CodeSha256": "RDdR/sFFbDSaDD6xr813iPmYJtf/Hm2UvBM3Z3++NSw="
       }
     },
-    "GenerateUploadUrlLambdaVersionTW7RLvHb6z32USoJNsgcvyuDQBHTqUDiZPQ3o3GCFOw": {
+    "GenerateUploadUrlLambdaVersionZzyVcttFeq65Rig1ad0dR2Bn2clMIomI7AE01AzsyGU": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GenerateUploadUrlLambdaFunction"
         },
-        "CodeSha256": "U4+VXhTZCho3OhdLtcUIZXpBPhW/+GahgpUhhnQTAbs="
+        "CodeSha256": "RDdR/sFFbDSaDD6xr813iPmYJtf/Hm2UvBM3Z3++NSw="
       }
     },
     "ApiGatewayRestApi": {
@@ -634,7 +634,7 @@
                 "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST,GET'"
               },
               "ResponseTemplates": {
-                "application/json": "#set($origin = $input.params(\"Origin\"))\n#if($origin == \"\") #set($origin = $input.params(\"origin\")) #end\n#if($origin.matches(\".+\")) #set($context.responseOverride.header.Access-Control-Allow-Origin = $origin) #end"
+                "application/json": ""
               }
             }
           ]
@@ -679,7 +679,7 @@
                 "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,DELETE,PATCH'"
               },
               "ResponseTemplates": {
-                "application/json": "#set($origin = $input.params(\"Origin\"))\n#if($origin == \"\") #set($origin = $input.params(\"origin\")) #end\n#if($origin.matches(\".+\")) #set($context.responseOverride.header.Access-Control-Allow-Origin = $origin) #end"
+                "application/json": ""
               }
             }
           ]
@@ -724,7 +724,7 @@
                 "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'"
               },
               "ResponseTemplates": {
-                "application/json": "#set($origin = $input.params(\"Origin\"))\n#if($origin == \"\") #set($origin = $input.params(\"origin\")) #end\n#if($origin.matches(\".+\")) #set($context.responseOverride.header.Access-Control-Allow-Origin = $origin) #end"
+                "application/json": ""
               }
             }
           ]
@@ -1022,7 +1022,7 @@
         "Type": "TOKEN"
       }
     },
-    "ApiGatewayDeployment1654070125285": {
+    "ApiGatewayDeployment1654137794795": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -1372,12 +1372,12 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/labapptult13/dev/1654070186170-2022-06-01T07:56:26.170Z/custom-resources.zip"
+          "S3Key": "serverless/labapptult13/dev/1654137889836-2022-06-02T02:44:49.836Z/custom-resources.zip"
         },
         "FunctionName": "labapptult13-dev-custom-resource-apigw-cw-role",
-        "Handler": "apiGatewayCloudWatchRole/handler.handler",
+        "Handler": "api-gateway-cloud-watch-role/handler.handler",
         "MemorySize": 1024,
-        "Runtime": "nodejs12.x",
+        "Runtime": "nodejs14.x",
         "Timeout": 180,
         "Role": {
           "Fn::GetAtt": [
@@ -1404,10 +1404,12 @@
           "type": "object",
           "properties": {
             "name": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "dueDate": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             }
           },
           "required": [
@@ -1432,13 +1434,16 @@
           "type": "object",
           "properties": {
             "name": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "dueDate": {
-              "type": "string"
+              "type": "string",
+              "minLength": 1
             },
             "done": {
-              "type": "boolean"
+              "type": "boolean",
+              "minLength": 1
             }
           },
           "required": [
@@ -2051,70 +2056,70 @@
         }
       }
     },
-    "CloudWatchLogsSubscriptionFilterAuthLogGroup": {
+    "CWLSubFilterAuthLogGroupUsEast1": {
       "Type": "AWS::Logs::SubscriptionFilter",
       "Properties": {
-        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:a3ff6229-fd94-4faf-97c5-8f4fbaeb0bc0#TWSvxrN1Mp6VXbBkVx#labapptult13#dev",
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:2f2a8adb-e503-4789-9656-b38873133ae1#KmdRWPNZlL7SMpWLpt#labapptult13#dev",
         "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
         "LogGroupName": {
           "Ref": "AuthLogGroup"
         }
       }
     },
-    "CloudWatchLogsSubscriptionFilterGetTodosLogGroup": {
+    "CWLSubFilterGetTodosLogGroupUsEast1": {
       "Type": "AWS::Logs::SubscriptionFilter",
       "Properties": {
-        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:a3ff6229-fd94-4faf-97c5-8f4fbaeb0bc0#TWSvxrN1Mp6VXbBkVx#labapptult13#dev",
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:2f2a8adb-e503-4789-9656-b38873133ae1#KmdRWPNZlL7SMpWLpt#labapptult13#dev",
         "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
         "LogGroupName": {
           "Ref": "GetTodosLogGroup"
         }
       }
     },
-    "CloudWatchLogsSubscriptionFilterCreateTodoLogGroup": {
+    "CWLSubFilterCreateTodoLogGroupUsEast1": {
       "Type": "AWS::Logs::SubscriptionFilter",
       "Properties": {
-        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:a3ff6229-fd94-4faf-97c5-8f4fbaeb0bc0#TWSvxrN1Mp6VXbBkVx#labapptult13#dev",
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:2f2a8adb-e503-4789-9656-b38873133ae1#KmdRWPNZlL7SMpWLpt#labapptult13#dev",
         "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
         "LogGroupName": {
           "Ref": "CreateTodoLogGroup"
         }
       }
     },
-    "CloudWatchLogsSubscriptionFilterUpdateTodoLogGroup": {
+    "CWLSubFilterUpdateTodoLogGroupUsEast1": {
       "Type": "AWS::Logs::SubscriptionFilter",
       "Properties": {
-        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:a3ff6229-fd94-4faf-97c5-8f4fbaeb0bc0#TWSvxrN1Mp6VXbBkVx#labapptult13#dev",
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:2f2a8adb-e503-4789-9656-b38873133ae1#KmdRWPNZlL7SMpWLpt#labapptult13#dev",
         "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
         "LogGroupName": {
           "Ref": "UpdateTodoLogGroup"
         }
       }
     },
-    "CloudWatchLogsSubscriptionFilterDeleteTodoLogGroup": {
+    "CWLSubFilterDeleteTodoLogGroupUsEast1": {
       "Type": "AWS::Logs::SubscriptionFilter",
       "Properties": {
-        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:a3ff6229-fd94-4faf-97c5-8f4fbaeb0bc0#TWSvxrN1Mp6VXbBkVx#labapptult13#dev",
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:2f2a8adb-e503-4789-9656-b38873133ae1#KmdRWPNZlL7SMpWLpt#labapptult13#dev",
         "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
         "LogGroupName": {
           "Ref": "DeleteTodoLogGroup"
         }
       }
     },
-    "CloudWatchLogsSubscriptionFilterGenerateUploadUrlLogGroup": {
+    "CWLSubFilterGenerateUploadUrlLogGroupUsEast1": {
       "Type": "AWS::Logs::SubscriptionFilter",
       "Properties": {
-        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:a3ff6229-fd94-4faf-97c5-8f4fbaeb0bc0#TWSvxrN1Mp6VXbBkVx#labapptult13#dev",
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:2f2a8adb-e503-4789-9656-b38873133ae1#KmdRWPNZlL7SMpWLpt#labapptult13#dev",
         "FilterPattern": "?\"REPORT RequestId: \" ?\"SERVERLESS_ENTERPRISE\"",
         "LogGroupName": {
           "Ref": "GenerateUploadUrlLogGroup"
         }
       }
     },
-    "CloudWatchLogsSubscriptionFilterApiGatewayLogGroup": {
+    "CWLSubFilterApiGatewayLogGroupUsEast1": {
       "Type": "AWS::Logs::SubscriptionFilter",
       "Properties": {
-        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:a3ff6229-fd94-4faf-97c5-8f4fbaeb0bc0#TWSvxrN1Mp6VXbBkVx#labapptult13#dev",
+        "DestinationArn": "arn:aws:logs:us-east-1:802587217904:destination:2f2a8adb-e503-4789-9656-b38873133ae1#KmdRWPNZlL7SMpWLpt#labapptult13#dev",
         "FilterPattern": "\"SLS_ACCESS_LOG\"",
         "LogGroupName": {
           "Ref": "ApiGatewayLogGroup"
@@ -2126,6 +2131,9 @@
     "ServerlessDeploymentBucketName": {
       "Value": {
         "Ref": "ServerlessDeploymentBucket"
+      },
+      "Export": {
+        "Name": "sls-labapptult13-dev-ServerlessDeploymentBucketName"
       }
     },
     "EnterpriseLogAccessIamRole": {
@@ -2134,42 +2142,63 @@
           "EnterpriseLogAccessIamRole",
           "Arn"
         ]
+      },
+      "Export": {
+        "Name": "sls-labapptult13-dev-EnterpriseLogAccessIamRole"
       }
     },
     "AuthLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AuthLambdaVersion2bmxZJ0SW0IXlLqFrzQmVQsVfJ6BFJG1w5FaONPvU"
+        "Ref": "AuthLambdaVersionFY0HtrFc9NYIpmdtKaI6GYNeJzqCtdgBHRDhNXxFEcE"
+      },
+      "Export": {
+        "Name": "sls-labapptult13-dev-AuthLambdaFunctionQualifiedArn"
       }
     },
     "GetTodosLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetTodosLambdaVersionz95oYUCR7pgTnhw5i2ZTnHDSpBvvTiAUsdhQEKr2BU"
+        "Ref": "GetTodosLambdaVersion5ijygv2RzjjnCk01UaNzYISViKppBY5Vz4WjXc"
+      },
+      "Export": {
+        "Name": "sls-labapptult13-dev-GetTodosLambdaFunctionQualifiedArn"
       }
     },
     "CreateTodoLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateTodoLambdaVersionMIQaDqIVzcnd1gOxcm1wykBT57IJaVnuh0kBQUjCM"
+        "Ref": "CreateTodoLambdaVersionD13oMsitRwZq0dnEaRai4OZsjjTTkOP8TvjMQl5cmo"
+      },
+      "Export": {
+        "Name": "sls-labapptult13-dev-CreateTodoLambdaFunctionQualifiedArn"
       }
     },
     "UpdateTodoLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "UpdateTodoLambdaVersiongikxZPEiFJCrXLZD8zlNO5mRXA0MTauysWo6aN1wV4"
+        "Ref": "UpdateTodoLambdaVersionVkESmem7sEE2sABoyB3gkgIfD1Bmp5f6DP2lqaFv0"
+      },
+      "Export": {
+        "Name": "sls-labapptult13-dev-UpdateTodoLambdaFunctionQualifiedArn"
       }
     },
     "DeleteTodoLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "DeleteTodoLambdaVersionwljoFUyVQTHssDq924s6dIlY6YCahDvzxobgeCe1Wvo"
+        "Ref": "DeleteTodoLambdaVersionzDWMRAN2zBt9PB5JPK8BnWjaTwx3StMZHmx8TMI"
+      },
+      "Export": {
+        "Name": "sls-labapptult13-dev-DeleteTodoLambdaFunctionQualifiedArn"
       }
     },
     "GenerateUploadUrlLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GenerateUploadUrlLambdaVersionTW7RLvHb6z32USoJNsgcvyuDQBHTqUDiZPQ3o3GCFOw"
+        "Ref": "GenerateUploadUrlLambdaVersionZzyVcttFeq65Rig1ad0dR2Bn2clMIomI7AE01AzsyGU"
+      },
+      "Export": {
+        "Name": "sls-labapptult13-dev-GenerateUploadUrlLambdaFunctionQualifiedArn"
       }
     },
     "ServiceEndpoint": {
@@ -2193,12 +2222,18 @@
             "/dev"
           ]
         ]
+      },
+      "Export": {
+        "Name": "sls-labapptult13-dev-ServiceEndpoint"
       }
     },
     "AwsDocApiId": {
       "Description": "API ID",
       "Value": {
         "Ref": "ApiGatewayRestApi"
+      },
+      "Export": {
+        "Name": "sls-labapptult13-dev-AwsDocApiId"
       }
     }
   }
