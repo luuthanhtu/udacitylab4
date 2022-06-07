@@ -305,7 +305,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/labapptult13/dev/1654137889836-2022-06-02T02:44:49.836Z/labapptult13.zip"
+                "S3Key": "serverless/labapptult13/dev/1654642539227-2022-06-07T22:55:39.227Z/labapptult13.zip"
               },
               "Handler": "s_Auth.handler",
               "Runtime": "nodejs12.x",
@@ -341,7 +341,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/labapptult13/dev/1654137889836-2022-06-02T02:44:49.836Z/labapptult13.zip"
+                "S3Key": "serverless/labapptult13/dev/1654642539227-2022-06-07T22:55:39.227Z/labapptult13.zip"
               },
               "Handler": "s_GetTodos.handler",
               "Runtime": "nodejs12.x",
@@ -378,7 +378,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/labapptult13/dev/1654137889836-2022-06-02T02:44:49.836Z/labapptult13.zip"
+                "S3Key": "serverless/labapptult13/dev/1654642539227-2022-06-07T22:55:39.227Z/labapptult13.zip"
               },
               "Handler": "s_CreateTodo.handler",
               "Runtime": "nodejs12.x",
@@ -415,7 +415,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/labapptult13/dev/1654137889836-2022-06-02T02:44:49.836Z/labapptult13.zip"
+                "S3Key": "serverless/labapptult13/dev/1654642539227-2022-06-07T22:55:39.227Z/labapptult13.zip"
               },
               "Handler": "s_UpdateTodo.handler",
               "Runtime": "nodejs12.x",
@@ -452,7 +452,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/labapptult13/dev/1654137889836-2022-06-02T02:44:49.836Z/labapptult13.zip"
+                "S3Key": "serverless/labapptult13/dev/1654642539227-2022-06-07T22:55:39.227Z/labapptult13.zip"
               },
               "Handler": "s_DeleteTodo.handler",
               "Runtime": "nodejs12.x",
@@ -489,7 +489,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/labapptult13/dev/1654137889836-2022-06-02T02:44:49.836Z/labapptult13.zip"
+                "S3Key": "serverless/labapptult13/dev/1654642539227-2022-06-07T22:55:39.227Z/labapptult13.zip"
               },
               "Handler": "s_GenerateUploadUrl.handler",
               "Runtime": "nodejs12.x",
@@ -519,64 +519,64 @@
               "GenerateUploadUrlLogGroup"
             ]
           },
-          "AuthLambdaVersionFY0HtrFc9NYIpmdtKaI6GYNeJzqCtdgBHRDhNXxFEcE": {
+          "AuthLambdaVersion3hnYmIc7IlmRdfBKVCYYTE6RNezCGe18slvnRg80": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AuthLambdaFunction"
               },
-              "CodeSha256": "RDdR/sFFbDSaDD6xr813iPmYJtf/Hm2UvBM3Z3++NSw="
+              "CodeSha256": "u8tGkoMjjNzJUQzUMjjoq0x9gtYEL4fiJNO5gDvK9gw="
             }
           },
-          "GetTodosLambdaVersion5ijygv2RzjjnCk01UaNzYISViKppBY5Vz4WjXc": {
+          "GetTodosLambdaVersionHQmtawiL0KXJqRGJKsVwTwiw4c7P9fuAQnxq4zb7o": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetTodosLambdaFunction"
               },
-              "CodeSha256": "RDdR/sFFbDSaDD6xr813iPmYJtf/Hm2UvBM3Z3++NSw="
+              "CodeSha256": "u8tGkoMjjNzJUQzUMjjoq0x9gtYEL4fiJNO5gDvK9gw="
             }
           },
-          "CreateTodoLambdaVersionD13oMsitRwZq0dnEaRai4OZsjjTTkOP8TvjMQl5cmo": {
+          "CreateTodoLambdaVersion7WViaLdMhnpFWZ32MxceTshkdFKQUYUb2HoDf7BIM": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateTodoLambdaFunction"
               },
-              "CodeSha256": "RDdR/sFFbDSaDD6xr813iPmYJtf/Hm2UvBM3Z3++NSw="
+              "CodeSha256": "u8tGkoMjjNzJUQzUMjjoq0x9gtYEL4fiJNO5gDvK9gw="
             }
           },
-          "UpdateTodoLambdaVersionVkESmem7sEE2sABoyB3gkgIfD1Bmp5f6DP2lqaFv0": {
+          "UpdateTodoLambdaVersionabW7b5vnI4DNJbT2n15bEEie8rbASOes7P37patYe0": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "UpdateTodoLambdaFunction"
               },
-              "CodeSha256": "RDdR/sFFbDSaDD6xr813iPmYJtf/Hm2UvBM3Z3++NSw="
+              "CodeSha256": "u8tGkoMjjNzJUQzUMjjoq0x9gtYEL4fiJNO5gDvK9gw="
             }
           },
-          "DeleteTodoLambdaVersionzDWMRAN2zBt9PB5JPK8BnWjaTwx3StMZHmx8TMI": {
+          "DeleteTodoLambdaVersionn6LKP77g8z9v3SYRJ1egp4WP9g6oE6IorEiqrn7Z2rA": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DeleteTodoLambdaFunction"
               },
-              "CodeSha256": "RDdR/sFFbDSaDD6xr813iPmYJtf/Hm2UvBM3Z3++NSw="
+              "CodeSha256": "u8tGkoMjjNzJUQzUMjjoq0x9gtYEL4fiJNO5gDvK9gw="
             }
           },
-          "GenerateUploadUrlLambdaVersionZzyVcttFeq65Rig1ad0dR2Bn2clMIomI7AE01AzsyGU": {
+          "GenerateUploadUrlLambdaVersionRhOXUSe7GB8hddW3sFdIzpKlh24tdjrurVFzxp63c": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GenerateUploadUrlLambdaFunction"
               },
-              "CodeSha256": "RDdR/sFFbDSaDD6xr813iPmYJtf/Hm2UvBM3Z3++NSw="
+              "CodeSha256": "u8tGkoMjjNzJUQzUMjjoq0x9gtYEL4fiJNO5gDvK9gw="
             }
           },
           "ApiGatewayRestApi": {
@@ -1050,7 +1050,7 @@
               "Type": "TOKEN"
             }
           },
-          "ApiGatewayDeployment1654137794795": {
+          "ApiGatewayDeployment1654642470040": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -1400,7 +1400,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/labapptult13/dev/1654137889836-2022-06-02T02:44:49.836Z/custom-resources.zip"
+                "S3Key": "serverless/labapptult13/dev/1654642539227-2022-06-07T22:55:39.227Z/custom-resources.zip"
               },
               "FunctionName": "labapptult13-dev-custom-resource-apigw-cw-role",
               "Handler": "api-gateway-cloud-watch-role/handler.handler",
@@ -2178,7 +2178,7 @@
           "AuthLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AuthLambdaVersionFY0HtrFc9NYIpmdtKaI6GYNeJzqCtdgBHRDhNXxFEcE"
+              "Ref": "AuthLambdaVersion3hnYmIc7IlmRdfBKVCYYTE6RNezCGe18slvnRg80"
             },
             "Export": {
               "Name": "sls-labapptult13-dev-AuthLambdaFunctionQualifiedArn"
@@ -2187,7 +2187,7 @@
           "GetTodosLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetTodosLambdaVersion5ijygv2RzjjnCk01UaNzYISViKppBY5Vz4WjXc"
+              "Ref": "GetTodosLambdaVersionHQmtawiL0KXJqRGJKsVwTwiw4c7P9fuAQnxq4zb7o"
             },
             "Export": {
               "Name": "sls-labapptult13-dev-GetTodosLambdaFunctionQualifiedArn"
@@ -2196,7 +2196,7 @@
           "CreateTodoLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateTodoLambdaVersionD13oMsitRwZq0dnEaRai4OZsjjTTkOP8TvjMQl5cmo"
+              "Ref": "CreateTodoLambdaVersion7WViaLdMhnpFWZ32MxceTshkdFKQUYUb2HoDf7BIM"
             },
             "Export": {
               "Name": "sls-labapptult13-dev-CreateTodoLambdaFunctionQualifiedArn"
@@ -2205,7 +2205,7 @@
           "UpdateTodoLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "UpdateTodoLambdaVersionVkESmem7sEE2sABoyB3gkgIfD1Bmp5f6DP2lqaFv0"
+              "Ref": "UpdateTodoLambdaVersionabW7b5vnI4DNJbT2n15bEEie8rbASOes7P37patYe0"
             },
             "Export": {
               "Name": "sls-labapptult13-dev-UpdateTodoLambdaFunctionQualifiedArn"
@@ -2214,7 +2214,7 @@
           "DeleteTodoLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DeleteTodoLambdaVersionzDWMRAN2zBt9PB5JPK8BnWjaTwx3StMZHmx8TMI"
+              "Ref": "DeleteTodoLambdaVersionn6LKP77g8z9v3SYRJ1egp4WP9g6oE6IorEiqrn7Z2rA"
             },
             "Export": {
               "Name": "sls-labapptult13-dev-DeleteTodoLambdaFunctionQualifiedArn"
@@ -2223,7 +2223,7 @@
           "GenerateUploadUrlLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GenerateUploadUrlLambdaVersionZzyVcttFeq65Rig1ad0dR2Bn2clMIomI7AE01AzsyGU"
+              "Ref": "GenerateUploadUrlLambdaVersionRhOXUSe7GB8hddW3sFdIzpKlh24tdjrurVFzxp63c"
             },
             "Export": {
               "Name": "sls-labapptult13-dev-GenerateUploadUrlLambdaFunctionQualifiedArn"
@@ -2397,7 +2397,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "AuthLambdaVersionFY0HtrFc9NYIpmdtKaI6GYNeJzqCtdgBHRDhNXxFEcE"
+        "versionLogicalId": "AuthLambdaVersion3hnYmIc7IlmRdfBKVCYYTE6RNezCGe18slvnRg80"
       },
       "GetTodos": {
         "handler": "s_GetTodos.handler",
@@ -2450,7 +2450,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "GetTodosLambdaVersion5ijygv2RzjjnCk01UaNzYISViKppBY5Vz4WjXc"
+        "versionLogicalId": "GetTodosLambdaVersionHQmtawiL0KXJqRGJKsVwTwiw4c7P9fuAQnxq4zb7o"
       },
       "CreateTodo": {
         "handler": "s_CreateTodo.handler",
@@ -2511,7 +2511,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "CreateTodoLambdaVersionD13oMsitRwZq0dnEaRai4OZsjjTTkOP8TvjMQl5cmo"
+        "versionLogicalId": "CreateTodoLambdaVersion7WViaLdMhnpFWZ32MxceTshkdFKQUYUb2HoDf7BIM"
       },
       "UpdateTodo": {
         "handler": "s_UpdateTodo.handler",
@@ -2572,7 +2572,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "UpdateTodoLambdaVersionVkESmem7sEE2sABoyB3gkgIfD1Bmp5f6DP2lqaFv0"
+        "versionLogicalId": "UpdateTodoLambdaVersionabW7b5vnI4DNJbT2n15bEEie8rbASOes7P37patYe0"
       },
       "DeleteTodo": {
         "handler": "s_DeleteTodo.handler",
@@ -2625,7 +2625,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "DeleteTodoLambdaVersionzDWMRAN2zBt9PB5JPK8BnWjaTwx3StMZHmx8TMI"
+        "versionLogicalId": "DeleteTodoLambdaVersionn6LKP77g8z9v3SYRJ1egp4WP9g6oE6IorEiqrn7Z2rA"
       },
       "GenerateUploadUrl": {
         "handler": "s_GenerateUploadUrl.handler",
@@ -2681,7 +2681,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "GenerateUploadUrlLambdaVersionZzyVcttFeq65Rig1ad0dR2Bn2clMIomI7AE01AzsyGU"
+        "versionLogicalId": "GenerateUploadUrlLambdaVersionRhOXUSe7GB8hddW3sFdIzpKlh24tdjrurVFzxp63c"
       }
     },
     "resources": {
@@ -2816,6 +2816,7 @@
       "org": "luuthanhtu2296",
       "app": "labapptult13",
       "service": "labapptult13",
+      "frameworkVersion": "3",
       "plugins": {
         "$ref": "$[\"service\"][\"plugins\"]"
       },
@@ -2841,7 +2842,7 @@
     "appUid": "KmdRWPNZlL7SMpWLpt"
   },
   "package": {
-    "artifactDirectoryName": "serverless/labapptult13/dev/1654137889836-2022-06-02T02:44:49.836Z",
+    "artifactDirectoryName": "serverless/labapptult13/dev/1654642539227-2022-06-07T22:55:39.227Z",
     "artifact": ""
   }
 }

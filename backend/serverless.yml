@@ -1,9 +1,8 @@
-# org: luuthanhtu
 org: luuthanhtu2296
 app: labapptult13
 service: labapptult13
 
-# frameworkVersion: '3'
+frameworkVersion: '3'
 
 plugins:
   - serverless-webpack
@@ -152,7 +151,7 @@ functions:
           - "*"
 
   DeleteTodo:
-    handler: src/lambda/http/deleteTodo.handlera
+    handler: src/lambda/http/deleteTodo.handler
     events:
       - http:
           method: delete
@@ -225,7 +224,6 @@ resources:
         ResponseType: DEFAULT_4XX
         RestApiId:
           Ref: ApiGatewayRestApi
-
     RequestBodyValidator:
       Type: AWS::ApiGateway::RequestValidator
       Properties:
@@ -234,7 +232,6 @@ resources:
           Ref: ApiGatewayRestApi
         ValidateRequestBody: true
         ValidateRequestParameters: false
-
     TodosTable:
       Type: AWS::DynamoDB::Table
       Properties:
